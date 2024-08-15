@@ -22,9 +22,9 @@ echo "Brick path: $brickpath"
 
 # Process raw files and create parquet files in parallel
 # calling a Python function with arguments input and output filenames
-cat $listpath/files.txt | tail -n +4 | xargs -P14 -n1 bash -c '
+cat $listpath/raw_files.txt | xargs -P14 -n1 bash -c '
   filename="${0%.*}"
-  echo $rawpath/$filename/$filename.txt
+  echo $rawpath/$0
   echo $brickpath/$filename.parquet
-  python stages/csv2parquet.py $rawpath/$filename.txt $brickpath/$filename.parquet
+  python stages/csv2parquet.py $rawpath/$0 $brickpath/$filename.parquet
 '

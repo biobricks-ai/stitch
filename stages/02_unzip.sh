@@ -20,9 +20,12 @@ mkdir -p $rawpath
 echo "Raw path: $rawpath"
 
 # Unzip files in parallel
-cat $listpath/files.txt | tail -n +2 | xargs -P14 -n1 bash -c '
+cat $listpath/downloaded_files.txt | xargs -P14 -n1 bash -c '
   filename="${0%.*}"
   echo $downloadpath/$0
   echo $rawpath/$filename
-  unzip $downloadpath/$0 -d $rawpath/$filename
+  gunzip -c $downloadpath/$0 > $rawpath/$filename
 '
+
+# List unzipped files
+find $rawpath -type f -name "*"  -exec basename {} \; > $listpath/raw_files.txt

@@ -1,2 +1,74 @@
 schema: '2.0'
-stages: {}
+stages:
+  download:
+    cmd: stages/01_download.sh
+    deps:
+    - path: stages/01_download.sh
+      hash: md5
+      md5: ce8caf62e1d9e916d9c6ed6e10853ce6
+      size: 1278
+      isexec: true
+    outs:
+    - path: download
+      hash: md5
+      md5: f253a9866431d074ee2342758367d9ce.dir
+      size: 243907369
+      nfiles: 2
+    - path: list/downloaded_files.txt
+      hash: md5
+      md5: bb7deeda45c2d31595c9fe9badff4f13
+      size: 81
+  unzip:
+    cmd: stages/02_unzip.sh
+    deps:
+    - path: download
+      hash: md5
+      md5: f253a9866431d074ee2342758367d9ce.dir
+      size: 243907369
+      nfiles: 2
+    - path: list/downloaded_files.txt
+      hash: md5
+      md5: bb7deeda45c2d31595c9fe9badff4f13
+      size: 81
+    - path: stages/02_unzip.sh
+      hash: md5
+      md5: b93129a4fd718798f3a9e9eebaf768e1
+      size: 690
+      isexec: true
+    outs:
+    - path: list/raw_files.txt
+      hash: md5
+      md5: e856cd2f7d43a7db883eb5b07806f3e0
+      size: 75
+    - path: raw
+      hash: md5
+      md5: c3f4e98f45faeff03453aad9d4f0e946.dir
+      size: 1240415010
+      nfiles: 2
+  build:
+    cmd: stages/03_build.sh
+    deps:
+    - path: list/raw_files.txt
+      hash: md5
+      md5: e856cd2f7d43a7db883eb5b07806f3e0
+      size: 75
+    - path: raw
+      hash: md5
+      md5: c3f4e98f45faeff03453aad9d4f0e946.dir
+      size: 1240415010
+      nfiles: 2
+    - path: stages/03_build.sh
+      hash: md5
+      md5: 364c32c21a6ab3516cec488f5327cb77
+      size: 755
+      isexec: true
+    - path: stages/csv2parquet.py
+      hash: md5
+      md5: 49b1cb5a6b552e667dc95cab0c990ecf
+      size: 262
+    outs:
+    - path: brick
+      hash: md5
+      md5: 7e9f65dc6182376e2ef0913ae6445a30.dir
+      size: 296804281
+      nfiles: 2

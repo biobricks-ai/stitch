@@ -15,21 +15,22 @@ stages:
       - stages/01_download.sh
     outs:
       - download
-      - list
+      - list/downloaded_files.txt
   unzip: 
     cmd: stages/02_unzip.sh
     deps:
       - stages/02_unzip.sh
       - download
-      - list
+      - list/downloaded_files.txt
     outs:
       - raw
+      - list/raw_files.txt
   build: 
     cmd: stages/03_build.sh
     deps:
       - stages/03_build.sh
-      - stages/csv2parquet.sh
+      - stages/csv2parquet.py
       - raw
-      - list
+      - list/raw_files.txt
     outs:
       - brick
