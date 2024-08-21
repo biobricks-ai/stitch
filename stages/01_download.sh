@@ -22,8 +22,8 @@ export downloadbase="$baseaddress/download/"
 
 # Retrieve the list of files to download from FTP base address
 wget --no-remove-listing $downloadpage
-# cat download.pl | grep -Po '(?<=href=")[^"]+\.tsv\.gz' | sed 's|/download/||g'  > files.txt
-cat download.pl | grep -Po '(?<=href=")[^"]+\.tsv\.gz' | sed 's|/download/||g' | head -n 2 > downloaded_files.txt
+cat download.pl | grep -Po '(?<=href=")[^"]+\.tsv\.gz' | sed 's|/download/||g'  > downloaded_files.txt
+# cat download.pl | grep -Po '(?<=href=")[^"]+\.tsv\.gz' | sed 's|/download/||g' | head -n 2 > downloaded_files.txt
 rm download.pl
 
 # Create the download directory
@@ -33,7 +33,7 @@ mkdir -p "$downloadpath"
 cd $downloadpath;
 
 # Download files in parallel
-cat $listpath/downloaded_files.txt | xargs -P14 -n1 bash -c '
+cat $listpath/downloaded_files.txt | xargs -P4 -n1 bash -c '
   echo $0
   wget -nH -q -nc -P $downloadpath $downloadbase$0
 '
