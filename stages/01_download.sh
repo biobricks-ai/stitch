@@ -33,7 +33,7 @@ mkdir -p "$downloadpath"
 cd $downloadpath;
 
 # Download files in parallel
-cat $listpath/downloaded_files.txt | xargs -P4 -n1 bash -c '
+cat $listpath/downloaded_files.txt | xargs -P10 -n1 bash -c '
   echo $0
   wget -nH -q -nc -P $downloadpath $downloadbase$0
 '
