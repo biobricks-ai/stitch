@@ -29,3 +29,6 @@ cat $listpath/downloaded_files.txt | xargs -P10 -n1 bash -c '
 
 # List unzipped files
 find $rawpath -type f -name "*"  -exec basename {} \; > $listpath/raw_files.txt
+
+# Fix header of chemical.sources.v5.0.tsv adding a missing column "source_id"
+sed -i '1s/$/\tsource_id/' $rawpath/chemical.sources.v5.0.tsv

@@ -5,70 +5,41 @@ stages:
     deps:
     - path: stages/01_download.sh
       hash: md5
-      md5: ce8caf62e1d9e916d9c6ed6e10853ce6
-      size: 1278
-      isexec: true
+      md5: 091ab7cdf2256c86cbfe6d35dce202b1
+      size: 1289
     outs:
     - path: download
       hash: md5
-      md5: f253a9866431d074ee2342758367d9ce.dir
-      size: 243907369
-      nfiles: 2
+      md5: 2dfa774d9f4c3095d9b550b57cf919a8.dir
+      size: 175820933862
+      nfiles: 10
     - path: list/downloaded_files.txt
       hash: md5
-      md5: bb7deeda45c2d31595c9fe9badff4f13
-      size: 81
+      md5: fb017ca2a0543e756a79c80559476231
+      size: 336
   unzip:
     cmd: stages/02_unzip.sh
     deps:
     - path: download
       hash: md5
-      md5: f253a9866431d074ee2342758367d9ce.dir
-      size: 243907369
-      nfiles: 2
+      md5: 2dfa774d9f4c3095d9b550b57cf919a8.dir
+      size: 175820933862
+      nfiles: 10
     - path: list/downloaded_files.txt
       hash: md5
-      md5: bb7deeda45c2d31595c9fe9badff4f13
-      size: 81
+      md5: fb017ca2a0543e756a79c80559476231
+      size: 336
     - path: stages/02_unzip.sh
       hash: md5
-      md5: b93129a4fd718798f3a9e9eebaf768e1
+      md5: 03f2756a27eb2aed3f756ecef16dc745
       size: 690
-      isexec: true
     outs:
     - path: list/raw_files.txt
       hash: md5
-      md5: e856cd2f7d43a7db883eb5b07806f3e0
-      size: 75
+      md5: c9a170ada0589d164159cf7263cb6612
+      size: 306
     - path: raw
       hash: md5
-      md5: c3f4e98f45faeff03453aad9d4f0e946.dir
-      size: 1240415010
-      nfiles: 2
-  build:
-    cmd: stages/03_build.sh
-    deps:
-    - path: list/raw_files.txt
-      hash: md5
-      md5: e856cd2f7d43a7db883eb5b07806f3e0
-      size: 75
-    - path: raw
-      hash: md5
-      md5: c3f4e98f45faeff03453aad9d4f0e946.dir
-      size: 1240415010
-      nfiles: 2
-    - path: stages/03_build.sh
-      hash: md5
-      md5: 364c32c21a6ab3516cec488f5327cb77
-      size: 755
-      isexec: true
-    - path: stages/csv2parquet.py
-      hash: md5
-      md5: 49b1cb5a6b552e667dc95cab0c990ecf
-      size: 262
-    outs:
-    - path: brick
-      hash: md5
-      md5: 7e9f65dc6182376e2ef0913ae6445a30.dir
-      size: 296804281
-      nfiles: 2
+      md5: 04ea407c5cd11bb89322c3727c02774c.dir
+      size: 1472772436786
+      nfiles: 10

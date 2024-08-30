@@ -13,7 +13,7 @@ if file_size >= 1_000_000_000:
     os.makedirs(OutFileName, exist_ok=True)
     chunk_size = 10_000_000
     try:
-        with pd.read_csv(InFileName, sep='\t', chunksize=chunk_size) as reader:
+        with pd.read_csv(InFileName, dtype='str', sep='\t', chunksize=chunk_size) as reader:
             for i, chunk in enumerate(reader):
                 filename = os.path.join(OutFileName, f"{i}.parquet")
                 print(f"csv2parquet: Writing chunk {i} to {filename}")
@@ -23,7 +23,7 @@ if file_size >= 1_000_000_000:
 else:
     print(f"csv2parquet: File size is {file_size} bytes and can be read in one go")
     try:
-        df = pd.read_csv(InFileName, sep='\t')
+        df = pd.read_csv(InFileName, dtype='str', sep='\t')
         df.to_parquet(OutFileName)
     except Exception as e:
         print(f"Error processing file: {e}")
