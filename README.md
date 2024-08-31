@@ -140,7 +140,7 @@ Example:
 Szklarczyk D, Santos A, von Mering C, Jensen LJ, Bork P, Kuhn M.
 STITCH 5: augmenting protein-chemical interaction networks with tissue and affinity data.
 Nucleic Acids Res. 2016 Jan 4;44(D1):D380-4.
-http://www.ncbi.nlm.nih.gov/pubmed/26590256
+https://academic.oup.com/nar/article/44/D1/D380/2503089
 
 
 Kuhn M, Szklarczyk D, Pletscher-Frankild S, Blicher TH, von Mering C, Jensen LJ, Bork P.
