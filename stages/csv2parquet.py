@@ -16,7 +16,7 @@ if file_size >= 1_000_000_000:
         with pd.read_csv(InFileName, dtype='str', sep='\t', chunksize=chunk_size) as reader:
             for i, chunk in enumerate(reader):
                 filename = os.path.join(OutFileName, f"{i}.parquet")
-                print(f"csv2parquet: Writing chunk {i} to {filename}")
+                print(f"csv2parquet: Writing chunk {i} to {filename}", end='\r')
                 chunk.to_parquet(filename)
     except Exception as e:
         print(f"Error processing file: {e}")

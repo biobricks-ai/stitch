@@ -31,8 +31,8 @@ stages:
       size: 336
     - path: stages/02_unzip.sh
       hash: md5
-      md5: 03f2756a27eb2aed3f756ecef16dc745
-      size: 690
+      md5: 8fdc0ecd8d4230ec9742b0fd29476c82
+      size: 832
     outs:
     - path: list/raw_files.txt
       hash: md5
@@ -40,6 +40,6 @@ stages:
       size: 306
     - path: raw
       hash: md5
-      md5: 04ea407c5cd11bb89322c3727c02774c.dir
-      size: 1472772436786
+      md5: 3b771af4c39fb11c57fa6bbabaa5c266.dir
+      size: 1472772436796
       nfiles: 10
