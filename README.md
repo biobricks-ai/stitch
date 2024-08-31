@@ -135,4 +135,26 @@ Example:
 }
 ``` 
 
+## References
 
+Szklarczyk D, Santos A, von Mering C, Jensen LJ, Bork P, Kuhn M.
+STITCH 5: augmenting protein-chemical interaction networks with tissue and affinity data.
+Nucleic Acids Res. 2016 Jan 4;44(D1):D380-4.
+http://www.ncbi.nlm.nih.gov/pubmed/26590256
+
+
+Kuhn M, Szklarczyk D, Pletscher-Frankild S, Blicher TH, von Mering C, Jensen LJ, Bork P.
+STITCH 4: integration of protein-chemical interactions with user data.
+Nucleic Acids Res. 2014 Jan;42(Database issue):D401-7.
+
+Kuhn M, Szklarczyk D*, Franceschini A, von Mering C, Jensen LJ, Bork P.
+STITCH 3: zooming in on protein-chemical interactions.
+Nucleic Acids Res. 2012 Jan;40(Database issue):D876-80.
+
+Kuhn M, Szklarczyk D, Franceschini A, Campillos M, von Mering C, Jensen LJ, Beyer A, Bork P.
+STITCH 2: an interaction network database for small molecules and proteins.
+Nucleic Acids Res. 2010 Jan;38(Database issue):D552-6.
+
+Kuhn M, von Mering C, Campillos M, Jensen LJ, Bork P.
+STITCH: interaction networks of chemicals and proteins.
+Nucleic Acids Res. 2008 Jan;36(Database issue):D684-8.
