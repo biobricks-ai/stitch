@@ -2,6 +2,8 @@
 
 ## Description
 
+STITCH, or 'Search Tool for Interacting Chemicals', is a comprehensive resource designed to provide an integrated overview of protein-small molecule interactions. It consolidates information scattered across various databases, scientific literature, and prediction methods into one unified platform. The database includes data on over 430,000 chemicals, making it a vast and versatile resource for researchers.
+
 STITCH is a database of known and predicted interactions between chemicals and proteins. The interactions include direct (physical) and indirect (functional) associations; they stem from computational prediction, from knowledge transfer between organisms, and from interactions aggregated from other (primary) databases.
 
 Genomic Context Predictions	
