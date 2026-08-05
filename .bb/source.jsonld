@@ -1,0 +1,37 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/stitch",
+  "dcterms:title": "STITCH: Search Tool for Interacting Chemicals",
+  "dcterms:description": "STITCH is a database of known and predicted interactions between chemicals and proteins, integrating evidence from experiments, other databases, text-mining, and computational prediction. It covers over 430,000 chemicals and 9.6 million proteins across 2,031 organisms. This brick downloads the STITCH v5.0 .tsv.gz distribution files (chemicals, aliases, sources, inchikeys, chemical-chemical and protein-chemical links, actions) from http://stitch.embl.de/download and converts them to parquet.",
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "biobricks:licenseName": "CC BY 4.0",
+  "biobricks:licenseClass": "attribution",
+  "biobricks:merckCommercialUse": "conditional",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "stages/01_download.sh",
+      "quote": "# Download page http://stitch.embl.de/cgi/download.pl ... export baseaddress=\"http://stitch.embl.de\"",
+      "confidence": "high"
+    },
+    {
+      "source": "https://string-db.org/cgi/access (STRING, STITCH's sister database from the same EMBL Bork lab, same distribution terms)",
+      "quote": "All data and download files in STRING are freely available under a 'Creative Commons BY 4.0' license.",
+      "confidence": "medium"
+    }
+  ],
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by BioBricks annotation agent (Claude). Download stage pulls STITCH v5.0 files from stitch.embl.de. The STITCH access/licensing page could not be fetched directly (the server's TLS certificate does not cover stitch.embl.de). STITCH is the chemical companion of STRING, produced by the same group (EMBL/Bork lab, SIB) and distributed under identical terms; STRING's access page explicitly states CC BY 4.0. STITCH's own access page historically states the same. Class attribution, commercial use conditional on attribution. HUMAN MUST verify STITCH's current license statement directly at http://stitch.embl.de/cgi/access.pl once the certificate issue is resolved.",
+  "dcterms:creator": "Kuhn M, Szklarczyk D, von Mering C, Bork P, et al. (EMBL / SIB)",
+  "dcterms:publisher": "STITCH Consortium (EMBL)",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "http://stitch.embl.de/cgi/download.pl",
+      "dcterms:title": "STITCH v5.0 chemical-protein interaction data",
+      "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+      "dcat:downloadURL": "http://stitch.embl.de/download/chemical_chemical.links.v5.0.tsv.gz",
+      "dcterms:publisher": "EMBL / SIB"
+    }
+  ]
+}
